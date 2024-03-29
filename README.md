@@ -116,6 +116,19 @@ Example:
 docker run -it docker1 bash
 ```
 
+Run a container with a port mapping:
+
+```bash
+docker run -it -p on:from image-name
+```
+
+Example:
+
+```bash
+docker run -it -p 3000:3001 my-node-app
+```
+ps: in this case app will run on port 3000 but usally we use same ports for both like ```3001:3001```
+
 # Keywords
 
 - ```-it``` stands for interactive.
