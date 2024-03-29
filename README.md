@@ -69,6 +69,21 @@ or
 ```bash
 docker container rm MyDocker
 ```
+## Stop a specific container:
+
+```bash
+docker container stop container-id or container-name
+```
+
+Example:
+
+```bash
+docker container stop a85ec1666e25
+```
+or
+```bash
+docker container stop MyDocker
+```
 
 ## Remove all unused containers from your local machine:
 
