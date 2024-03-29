@@ -129,6 +129,32 @@ docker run -it -p 3000:3001 my-node-app
 ```
 ps: in this case app will run on port 3000 but usally we use same ports for both like ```3001:3001```
 
+Build again the same image using tag
+
+```bash
+docker build -t image-name:tag location
+```
+
+Example:
+
+```bash
+docker build -t my-node-app:latest .
+```
+
+Automatic Port Mapping
+
+```bash
+docker run -it -P image-name
+```
+
+Example:
+
+```bash
+docker run -it -P my-node-app
+```
+ps: for using automatic port mapping you need to export ports in Dokerfile with the key word ```EXPOSE``` e.g ```EXPOSE 3000``` and you can port more one ports or range of ports like ```EXPOSE 3000-3005```
+
+
 # Keywords
 
 - ```-it``` stands for interactive.
