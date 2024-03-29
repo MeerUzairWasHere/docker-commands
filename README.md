@@ -116,6 +116,12 @@ Example:
 docker run -it docker1 bash
 ```
 
+# Keywords
+
+- ```-it``` stands for interactive.
+- ```-p``` stands for port or port mapping.
+- ```-t``` stands for tag.
+
 ## Note
 
 Replace `image-name`, `image-id`, `container-id`, `container-name`, `file-name`, and `[CMD]` with your actual values when using the commands.
