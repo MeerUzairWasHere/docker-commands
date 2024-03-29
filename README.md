@@ -157,6 +157,7 @@ Example:
 ```bash
 docker run -it -P my-node-app
 ```
+
 ps: for using automatic port mapping you need to export ports in Dokerfile with the key word ```EXPOSE``` e.g ```EXPOSE 3000``` and you can port more one ports or range of ports like ```EXPOSE 3000-3005```
 
 ## Docker Stats
@@ -164,6 +165,30 @@ ps: for using automatic port mapping you need to export ports in Dokerfile with 
 ```bash
 docker stats
 ```
+## Tag a image (make a copy with different name)
+
+```bash
+docker tag image-name new-tag-name
+```
+
+Example:
+
+```bash
+docker tag my-node-app meeruzairwashere/my-first-node-app
+```
+
+## Push Image to the dockerhub
+
+```bash
+docker push image-name
+```
+
+Example:
+
+```bash
+docker push meeruzairwashere/my-first-node-app
+```
+ps: before push you need to create the repository with the same name on docker hub
 
 # Keywords
 
