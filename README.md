@@ -4,8 +4,6 @@
 
 ## Pulling an image
 
-Pull an image from Docker Hub:
-
 ```bash
 docker pull image-name
 ```
@@ -18,8 +16,6 @@ docker pull ubuntu
 
 ## Running Containers
 
-Run an image as a container:
-
 ```bash
 docker run -it image-name
 ```
@@ -30,9 +26,7 @@ Example:
 docker run -it ubuntu
 ```
 
-## Managing Images
-
-List all images on your local machine:
+## List all images on your local machine:
 
 ```bash
 docker images
@@ -42,27 +36,25 @@ or
 docker image ls
 ```
 
-Remove an image from your local machine:
+## Remove an image from your local machine:
 
 ```bash
 docker image rm image-id
 ```
 
-Inspect metadata about a specific image:
+## Inspect metadata about a specific image:
 
 ```bash
 docker image inspect image-id
 ```
 
-Remove all unused images from your local machine:
+## Remove all unused images from your local machine:
 
 ```bash
 docker image prune -a
 ```
 
-## Managing Containers
-
-Remove a specific container:
+## Remove a specific container:
 
 ```bash
 docker container rm container-id or container-name
@@ -73,26 +65,24 @@ Example:
 ```bash
 docker container rm a85ec1666e25
 ```
-
+or
 ```bash
 docker container rm MyDocker
 ```
 
-Remove all unused containers from your local machine:
+## Remove all unused containers from your local machine:
 
 ```bash
 docker container prune
 ```
 
-## Additional Commands
-
-View the history of an image:
+## View the history of an image:
 
 ```bash
 docker image history image-id
 ```
 
-Build a custom image:
+## Build a custom image:
 
 ```bash
 docker build -t file-name location
@@ -104,7 +94,7 @@ Example:
 docker build -t myNewImage .
 ```
 
-Run a container with a specific command:
+## Run a container with a specific command:
 
 ```bash
 docker run -it file-name [CMD]
@@ -116,7 +106,7 @@ Example:
 docker run -it docker1 bash
 ```
 
-Run a container with a port mapping:
+## Run a container with a port mapping:
 
 ```bash
 docker run -it -p on:from image-name
@@ -129,7 +119,7 @@ docker run -it -p 3000:3001 my-node-app
 ```
 ps: in this case app will run on port 3000 but usally we use same ports for both like ```3001:3001```
 
-Build again the same image using tag
+## Build again the same image using tag
 
 ```bash
 docker build -t image-name:tag location
@@ -141,7 +131,7 @@ Example:
 docker build -t my-node-app:latest .
 ```
 
-Automatic Port Mapping
+## Automatic Port Mapping
 
 ```bash
 docker run -it -P image-name
