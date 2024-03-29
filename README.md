@@ -144,6 +144,11 @@ docker run -it -P my-node-app
 ```
 ps: for using automatic port mapping you need to export ports in Dokerfile with the key word ```EXPOSE``` e.g ```EXPOSE 3000``` and you can port more one ports or range of ports like ```EXPOSE 3000-3005```
 
+## Docker Stats
+
+```bash
+docker stats
+```
 
 # Keywords
 
