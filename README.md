@@ -43,6 +43,11 @@
 ### Docker Volume:
 - `docker run -it -v /host/path:/container/path image-name` - This command mounts the directory `/host/path` on the host machine into the container at `/container/path`
 - `docker run -it -v my_volume:/container/path image-name` - This command uses a Docker-managed volume named `my_volume` and mounts it into the container at `/container/path`
+- `docker volume create volume-name`: Used to create a volume.
+- `docker volume inspect volume-name`: Displays detailed information on one or more volumes.
+- `docker volume ls`: Lists volumes.
+- `docker volume prune`: Removes unused local volumes.
+- `docker volume rm volume-name`: Removes one or more volumes.
 
 
 ### Docker Hub Integration:
