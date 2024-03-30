@@ -26,6 +26,19 @@ Example:
 docker run -it ubuntu
 ```
 
+
+## Spin a container with custom name
+
+```bash
+docker run -itd --name container-name --rm image-name
+```
+
+Example:
+
+```bash
+docker run -itd --name my-busybox --rm busybox
+```
+
 ## List all images on your local machine:
 
 ```bash
@@ -121,6 +134,18 @@ Example:
 docker run -it docker1 bash
 ```
 
+## Run a container in detach mode:
+
+```bash
+docker exec -itd container-name [CMD]
+```
+
+Example:
+
+```bash
+docker exec -itd my-container sh
+```
+
 ## Run a container with a port mapping:
 
 ```bash
@@ -176,7 +201,6 @@ Example:
 ```bash
 docker tag my-node-app meeruzairwashere/my-first-node-app
 ```
-
 ## Push Image to the dockerhub
 
 ```bash
@@ -189,6 +213,85 @@ Example:
 docker push meeruzairwashere/my-first-node-app
 ```
 ps: before push you need to create the repository with the same name on docker hub
+
+# Docker Network
+
+## Create user defined bridge network
+
+```bash
+docker network create bridge-name 
+```
+
+Example:
+
+```bash
+docker network create meers-bridge
+```
+## List all networks
+
+```bash
+docker network ls -a 
+```
+
+## Inspect a network
+
+```bash
+docker network inspect network-name
+```
+
+Example:
+
+```bash
+docker network inspect meers-bridge
+```
+## remove a network
+
+```bash
+docker network rm network-name
+```
+
+Example:
+
+```bash
+docker network rm meers-bridge
+```
+
+## Connect a container to the specific network
+
+```bash
+docker network connect network-name container-name
+```
+
+Example:
+
+```bash
+docker network connect meers-brudge my-container
+```
+
+## Disconnect a container to the specific network
+
+```bash
+docker network disconnect network-name container-name
+```
+
+Example:
+
+```bash
+docker network disconnect meers-brudge my-container
+```
+
+## Spin a container with specific network and name 
+
+```bash
+docker run -itd --network network-name --rm --name container-name
+```
+
+Example:
+
+```bash
+docker run -itd --network meers-bridge --rm --name my-container
+```
+
 
 # Keywords
 
