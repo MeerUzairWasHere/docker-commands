@@ -298,6 +298,7 @@ docker run -itd --network meers-bridge --rm --name my-container
 - ```-it``` stands for interactive.
 - ```-p``` stands for port or port mapping.
 - ```-t``` stands for tag.
+- ```-d``` stands for `detach.` It tells Docker to run the container in the background, meaning it will start the container and return you to the command prompt without attaching your terminal to the container's output. This is useful for running containers that you don't need to actively monitor.
 
 ## Note
 
