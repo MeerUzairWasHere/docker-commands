@@ -1,297 +1,50 @@
-# - Docker Cheat Sheet
-
-
-
-## Pulling an image
-
-```bash
-docker pull image-name
-```
-
-Example:
-
-```bash
-docker pull ubuntu
-```
-
-## Running Containers
-
-```bash
-docker run -it image-name
-```
-
-Example:
-
-```bash
-docker run -it ubuntu
-```
-
-
-## Spin a container with custom name
-
-```bash
-docker run -itd --name container-name --rm image-name
-```
-
-Example:
-
-```bash
-docker run -itd --name my-busybox --rm busybox
-```
-
-## List all images on your local machine:
-
-```bash
-docker images
-```
-or
-```bash
-docker image ls
-```
-
-## Remove an image from your local machine:
-
-```bash
-docker image rm image-id
-```
-
-## Inspect metadata about a specific image:
-
-```bash
-docker image inspect image-id
-```
-
-## Remove all unused images from your local machine:
-
-```bash
-docker image prune -a
-```
-
-## Remove a specific container:
-
-```bash
-docker container rm container-id or container-name
-```
-
-Example:
-
-```bash
-docker container rm a85ec1666e25
-```
-or
-```bash
-docker container rm MyDocker
-```
-## Stop a specific container:
-
-```bash
-docker container stop container-id or container-name
-```
-
-Example:
-
-```bash
-docker container stop a85ec1666e25
-```
-or
-```bash
-docker container stop MyDocker
-```
-
-## Remove all unused containers from your local machine:
-
-```bash
-docker container prune
-```
-
-## View the history of an image:
-
-```bash
-docker image history image-id
-```
-
-## Build a custom image:
-
-```bash
-docker build -t file-name location
-```
-
-Example:
-
-```bash
-docker build -t myNewImage .
-```
-
-## Run a container with a specific command:
-
-```bash
-docker run -it file-name [CMD]
-```
-
-Example:
-
-```bash
-docker run -it docker1 bash
-```
-
-## Run a container in detach mode:
-
-```bash
-docker exec -itd container-name [CMD]
-```
-
-Example:
-
-```bash
-docker exec -itd my-container sh
-```
-
-## Run a container with a port mapping:
-
-```bash
-docker run -it -p on:from image-name
-```
-
-Example:
-
-```bash
-docker run -it -p 3000:3001 my-node-app
-```
-ps: in this case app will run on port 3000 but usally we use same ports for both like ```3001:3001```
-
-## Build again the same image using tag
-
-```bash
-docker build -t image-name:tag location
-```
-
-Example:
-
-```bash
-docker build -t my-node-app:latest .
-```
-
-## Automatic Port Mapping
-
-```bash
-docker run -it -P image-name
-```
-
-Example:
-
-```bash
-docker run -it -P my-node-app
-```
-
-ps: for using automatic port mapping you need to export ports in Dokerfile with the key word ```EXPOSE``` e.g ```EXPOSE 3000``` and you can port more one ports or range of ports like ```EXPOSE 3000-3005```
-
-## Docker Stats
-
-```bash
-docker stats
-```
-## Tag a image (make a copy with different name)
-
-```bash
-docker tag image-name new-tag-name
-```
-
-Example:
-
-```bash
-docker tag my-node-app meeruzairwashere/my-first-node-app
-```
-## Push Image to the dockerhub
-
-```bash
-docker push image-name
-```
-
-Example:
-
-```bash
-docker push meeruzairwashere/my-first-node-app
-```
-ps: before push you need to create the repository with the same name on docker hub
-
-# Docker Network
-
-## Create user defined bridge network
-
-```bash
-docker network create bridge-name 
-```
-
-Example:
-
-```bash
-docker network create meers-bridge
-```
-## List all networks
-
-```bash
-docker network ls -a 
-```
-
-## Inspect a network
-
-```bash
-docker network inspect network-name
-```
-
-Example:
-
-```bash
-docker network inspect meers-bridge
-```
-## remove a network
-
-```bash
-docker network rm network-name
-```
-
-Example:
-
-```bash
-docker network rm meers-bridge
-```
-
-## Connect a container to the specific network
-
-```bash
-docker network connect network-name container-name
-```
-
-Example:
-
-```bash
-docker network connect meers-brudge my-container
-```
-
-## Disconnect a container to the specific network
-
-```bash
-docker network disconnect network-name container-name
-```
-
-Example:
-
-```bash
-docker network disconnect meers-brudge my-container
-```
-
-## Spin a container with specific network and name 
-
-```bash
-docker run -itd --network network-name --rm --name container-name
-```
-
-Example:
-
-```bash
-docker run -itd --network meers-bridge --rm --name my-container
-```
-
+# Docker Cheat Sheet
+
+### Run:
+- `docker run -it image-name`: Runs a container interactively based on the specified image.
+- `docker run -itd --name container-name --rm image-name`: Runs a container with a custom name and removes it when stopped.
+- `docker run -it -p on:from image-name`: Runs a container with port mapping.
+- `docker run -it -P image-name`: Runs a container with automatic port mapping.
+- `docker run -itd --network network-name --rm --name container-name`: Runs a container with a specific network and name.
+- `docker run -it -P image-name`: Runs a container with automatic port mapping.
+- `docker run -it file-name [CMD]`: Runs a container with a specific command.
+- `docker run -itd container-name [CMD]`: Runs a command in a running container in detached mode.
+
+### Pulling an image:
+- `docker pull image-name`: Pulls an image from a registry to your local machine.
+
+### Building and Tagging Images:
+- `docker build -t file-name location`: Builds a custom image using a Dockerfile.
+- `docker build -t image-name:tag location`: Builds an image with a specific tag.
+- `docker tag image-name new-tag-name`: Tags an existing image with a new name.
+
+### Images Management:
+- `docker images`: Lists all images on your local machine.
+- `docker image ls`: Lists all images on your local machine.
+- `docker image rm image-id`: Removes a specific image from your local machine.
+- `docker image inspect image-id`: Retrieves metadata about a specific image.
+- `docker image prune -a`: Removes all unused images from your local machine.
+- `docker image history image-id`: Displays the history of changes to an image.
+
+### Container Management:
+- `docker container rm container-id or container-name`: Removes a specific container.
+- `docker container stop container-id or container-name`: Stops a specific container.
+- `docker container prune`: Removes all unused containers from your local machine.
+- `docker attach container-name`: Attaches to a running container's console or output.
+
+### Docker Network:
+- `docker network create bridge-name`: Creates a user-defined bridge network.
+- `docker network ls -a`: Lists all networks, including ones that are not in use.
+- `docker network inspect network-name`: Retrieves details about a specific network.
+- `docker network rm network-name`: Removes a specific network.
+- `docker network connect network-name container-name`: Connects a container to a specific network.
+- `docker network disconnect network-name container-name`: Disconnects a container from a specific network.
+
+### Docker Hub Integration:
+- `docker push image-name`: Pushes an image to a registry like Docker Hub.
+
+### Miscellaneous:
+- `docker stats`: Displays live system resource usage statistics for all containers.
 
 # Keywords
 
