@@ -40,6 +40,11 @@
 - `docker network connect network-name container-name`: Connects a container to a specific network.
 - `docker network disconnect network-name container-name`: Disconnects a container from a specific network.
 
+### Docker Volume:
+- `docker run -it -v /host/path:/container/path image-name` - This command mounts the directory `/host/path` on the host machine into the container at `/container/path`
+- `docker run -it -v my_volume:/container/path image-name` - This command uses a Docker-managed volume named `my_volume` and mounts it into the container at `/container/path`
+
+
 ### Docker Hub Integration:
 - `docker push image-name`: Pushes an image to a registry like Docker Hub.
 
@@ -52,6 +57,7 @@
 - ```-p``` stands for port or port mapping.
 - ```-t``` stands for tag.
 - ```-d``` stands for `detach.` It tells Docker to run the container in the background, meaning it will start the container and return you to the command prompt without attaching your terminal to the container's output. This is useful for running containers that you don't need to actively monitor.
+- ```-v``` stands for "volume." It is used to create a volume or bind mount between the host machine and the Docker container.
 
 ## Note
 
